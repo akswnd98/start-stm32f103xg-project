@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.22621.0",
+            "compilerPath": "arm-none-eabi-gcc.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-gcc-arm",
+            "compilerArgs": [
+                "-o firmware.elf \\",
+                "./cmsis_device_f1/Source/Templates/system_stm32f1xx.c \\",
+                "./cmsis_device_f1/Source/Templates/gcc/startup_stm32f103xg.s \\",
+                "-T ./cmsis_device_f1/Source/Templates/gcc/linker/STM32F103XB_FLASH.ld \\",
+                "-mcpu=cortex-m3 -mthumb \\",
+                "-Icmsis_device_f1/Include \\",
+                "-ICMSIS_5-5.9.0/CMSIS/Core/Include \\",
+                "-Iinclude \\",
+                "-DSTM32F103xG \\",
+                "-specs=nosys.specs"
+            ]
+        }
+    ],
+    "version": 4
+}
